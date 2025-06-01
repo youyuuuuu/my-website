@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_test1.css') }}?v={{ timestamp }}">
+    <meta charset="UTF-8">
+    <title>中翻日測驗</title>
+</head>
+<body>
+
+    <h1>請選出正確的日文翻譯</h1>
+    <h2>{{ question }}</h2>
+
+    {% for option in options %}
+        <button onclick="checkAnswer('{{ option }}')">{{ option }}</button><br>
+    {% endfor %}
+
+    <div id="result"></div>
+   <form action="{{ url_for('test1') }}" method="POST" style="margin-top: 30px;">
+    <input type="hidden" name="level" value="{{ request.form.get('level', 'N5') }}">
+    <input type="hidden" name="mode" value="{{ request.form.get('mode', '中對日') }}">
+    <button type="submit">下一題</button>
+    <a href="/" class="home-button">回首頁</a>
+
+   </form>
+
+    <script>
+        const correctAnswer = "{{ answer }}";
+
+        function checkAnswer(choice) {
+            const result = document.getElementById("result");
+            if (choice === correctAnswer) {
+                result.innerText = "✅ 正確！";
+                result.style.color = "green";
+            } else {
+                result.innerText = "❌ 錯誤，再試一次！";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
+

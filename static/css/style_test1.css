@@ -1,0 +1,110 @@
+/* 全域設定 */
+body {
+  font-family: "微軟正黑體", sans-serif;
+  background: linear-gradient(to bottom, #f0f4ff, #dbe8ff);
+  text-align: center;
+  padding: 50px 20px;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 標題樣式 */
+h1 {
+  color: #2c3e50;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  color: #34495e;
+  margin-bottom: 40px;
+}
+
+/* 選項按鈕 */
+button {
+  font-size: 26px;
+  padding: 20px 50px;
+  margin: 15px auto;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, #4a90e2, #007bff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+  display: block;
+  width: 70%;
+  max-width: 500px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* 結果顯示 */
+#result {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  min-height: 40px;
+  transition: color 0.3s;
+}
+
+/* 回首頁按鈕 */
+.home-button {
+  display: inline-block;
+  font-size: 22px;
+  padding: 14px 30px;
+  margin-top: 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.home-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* 下一題按鈕樣式 */
+form button[type="submit"] {
+  font-size: 22px;
+  padding: 14px 30px;
+  margin-top: 30px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+/* 響應式調整：手機上按鈕更窄 */
+@media (max-width: 600px) {
+  button {
+    width: 90%;
+    font-size: 22px;
+    padding: 16px 30px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  #result {
+    font-size: 22px;
+  }
+}
