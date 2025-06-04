@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ timestamp }}">
+  <meta charset="UTF-8">
+  <title>日文單字測驗</title>
+</head>
+<body>
+
+<h1>日文單字測驗</h1>
+
+<form action="{{ url_for('test1') }}" method="POST">
+  <div class="section">
+    <h2>選擇等級</h2>
+    <div class="buttons">
+      <button class="btn" type="button" onclick="selectLevel('N5')">N5</button>
+      <button class="btn" type="button" onclick="selectLevel('N4')">N4</button>
+      <button class="btn" type="button" onclick="selectLevel('N3')">N3</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>選擇題型</h2>
+    <div class="buttons">
+      <button class="btn" type="button" onclick="selectMode('日對中')">日翻中</button>
+      <button class="btn" type="button" onclick="selectMode('中對日')">中翻日</button>
+      <button class="btn" type="button" onclick="selectMode('連連看')">連連看</button>
+    </div>
+  </div>
+
+  <!-- 隱藏欄位來傳資料 -->
+  <input type="hidden" name="level" id="level" value="N5">
+  <input type="hidden" name="mode" id="mode" value="中對日">
+
+  <button type="submit">開始測驗</button>
+</form>
+
+<script>
+  function selectLevel(level) {
+    document.getElementById('level').value = level;
+  }
+
+  function selectMode(mode) {
+    document.getElementById('mode').value = mode;
+  }
+</script>
+
+</body>
+</html>
