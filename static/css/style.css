@@ -78,4 +78,32 @@ form > button[type="submit"] {
 form > button[type="submit"]:hover {
   background-color: #1e8449;
 }
+@media (max-width: 600px) {
+  form {
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px 0;
+  }
+
+  form > button[type="submit"] {
+    font-size: 1em;
+    padding: 12px 0;
+  }
+}
 
